@@ -1,13 +1,13 @@
 # vscode-json
 
-[![CI](https://github.com/riccardopll/vscode-json-tools-x/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/riccardopll/vscode-json-tools-x/actions/workflows/ci.yml)
+[![CI](https://github.com/riccardopll/vscode-json/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/riccardopll/vscode-json/actions/workflows/ci.yml)
 
 `vscode-json` is a VS Code extension for fast JSON editing in-place.
 
 ## Install
 
-- VS Code Marketplace: [riccardopll.rpll-json-tools](https://marketplace.visualstudio.com/items?itemName=riccardopll.rpll-json-tools)
-- Open VSX: [riccardopll/rpll-json-tools](https://open-vsx.org/extension/riccardopll/rpll-json-tools)
+- VS Code Marketplace: [riccardopll.vscode-json-kit](https://marketplace.visualstudio.com/items?itemName=riccardopll.vscode-json-kit)
+- Open VSX: [riccardopll/vscode-json-kit](https://open-vsx.org/extension/riccardopll/vscode-json-kit)
 
 ## Usage
 
