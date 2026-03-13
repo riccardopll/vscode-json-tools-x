@@ -1,8 +1,8 @@
-# JSON Tools X
+# vscode-json
 
 [![CI](https://github.com/riccardopll/vscode-json-tools-x/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/riccardopll/vscode-json-tools-x/actions/workflows/ci.yml)
 
-JSON Tools X is a VS Code extension for fast JSON editing in-place.
+`vscode-json` is a VS Code extension for fast JSON editing in-place.
 
 ## Install
 
