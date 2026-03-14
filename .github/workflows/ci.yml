@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 concurrency:
   group: publish-main
   cancel-in-progress: true
@@ -24,7 +27,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version-file: .node-version
           cache: npm
           cache-dependency-path: package-lock.json
 
@@ -48,6 +51,15 @@ jobs:
         run: |
           VSIX_FILE=$(ls *.vsix)
           echo "vsix=${VSIX_FILE}" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ env.VERSION }}
+          name: v${{ env.VERSION }}
+          target_commitish: ${{ github.sha }}
+          generate_release_notes: true
+          files: ${{ steps.vsix.outputs.vsix }}
 
       - name: Publish to VS Code Marketplace (VSCE)
         if: env.VSCE_PAT != ''
