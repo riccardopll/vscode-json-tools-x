@@ -1,6 +1,6 @@
 {
   "name": "vscode-json-kit",
-  "displayName": "vscode-json-kit",
+  "displayName": "JSON Kit",
   "version": "0.0.1",
   "description": "A VS Code extension that provides JSON manipulation commands.",
   "categories": [
@@ -28,17 +28,17 @@
     "compile": "npm run check-types && npm run lint && node esbuild.js",
     "compile-tests": "tsc -p . --outDir out && cp -r src/test/resources out/test/",
     "lint": "eslint src --fix && prettier --write .",
+    "ovsx:publish": "dotenv -e .env -- npm run package && dotenv -e .env -- ovsx publish",
     "package": "npm run check-types && npm run lint && node esbuild.js --production",
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
     "test": "vscode-test",
     "vsce:package": "vsce package",
     "vsce:publish": "vsce publish",
-    "ovsx:publish": "dotenv -e .env -- npm run package && dotenv -e .env -- ovsx publish",
     "vscode:prepublish": "npm run package",
     "watch": "npm-run-all -p watch:*",
-    "watch-tests": "tsc -p . -w --outDir out & cp -r src/test/resources out/test/",
     "watch:esbuild": "node esbuild.js --watch",
-    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json"
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "watch-tests": "tsc -p . -w --outDir out & cp -r src/test/resources out/test/"
   },
   "contributes": {
     "commands": [
@@ -66,11 +66,11 @@
     "@vscode/test-cli": "^0.0.12",
     "@vscode/test-electron": "^2.5.2",
     "@vscode/vsce": "^3.7.1",
+    "dotenv-cli": "^7.4.4",
     "esbuild": "^0.27.4",
     "eslint": "^9.39.4",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
-    "dotenv-cli": "^7.4.4",
     "npm-check-updates": "^18.3.1",
     "npm-run-all": "^4.1.5",
     "ovsx": "^0.10.9",
